@@ -31,7 +31,7 @@ void dfs(const int & runned_thread, const int & all_thread, const int & first_th
 				{ flag = false; break; }
 		if (!flag)
 			continue;
-		// ÕÒµ½Ò»¸öÂú×ã×ÔÉíneedºÍfinishµÄÏß³Ì£¬¸üÐÂ Work
+		// ï¿½Òµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½needï¿½ï¿½finishï¿½ï¿½ï¿½ß³Ì£ï¿½ï¿½ï¿½ï¿½ï¿½ Work
 		for (int j = 0; j != source_num; ++j)
 			Work[j] += Allocation[i][j];
 		_FINISH[i] = true;
@@ -39,7 +39,7 @@ void dfs(const int & runned_thread, const int & all_thread, const int & first_th
 		
 		dfs(runned_thread + 1, all_thread, first_thread);
 
-		// dfsÊý¾Ý»ØËÝ
+		// dfsï¿½ï¿½ï¿½Ý»ï¿½ï¿½ï¿½
 		_ANS_THREAD.pop_back();
 		for (int j = 0; j != source_num; ++j)
 			Work[j] -= Allocation[i][j];
@@ -89,14 +89,14 @@ int main(int argc, char *argv[])
 	for (int i = 0; i != source_num; ++i) {
 		Available[i] -= Request[i];
 		Allocation[thread][i] += Request[i];
-		Need[thread][i] += Request[i];
+		Need[thread][i] -= Request[i];
 	}
 
 	// step 4
 	Work = Available;
 	for (int i = 0; i != MAX.size(); ++i)
 		_FINISH.push_back(false);
-	_ANS_THREAD.push_back(thread);	// ËùÓÐµÄ°²È«ÐòÁÐ¶¼´ÓÊäÈëµÄthread¿ªÊ¼
+	_ANS_THREAD.push_back(thread);	// ï¿½ï¿½ï¿½ÐµÄ°ï¿½È«ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½threadï¿½ï¿½Ê¼
 	_FINISH[thread] = true;
 	for (int i = 0; i != source_num; ++i)
 		Work[i] += Allocation[thread][i];
