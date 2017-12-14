@@ -70,9 +70,11 @@ class BoundedBuffer:
             time.sleep(1)
     
 if __name__ == '__main__':
+    producer_num = int(input('Enter the number of producers:'))
+    consumer_num = int(input('Enter the number of consumers:'))
     bf = BoundedBuffer()
-    producer_container = [threading.Thread(target = bf.producer) for i in range(4)]
-    consumer_container = [threading.Thread(target = bf.consumer) for i in range(3)]
+    producer_container = [threading.Thread(target = bf.producer) for i in range(producer_num)]
+    consumer_container = [threading.Thread(target = bf.consumer) for i in range(consumer_num)]
 
     for _thread in producer_container + consumer_container:
         _thread.start()
