@@ -1,10 +1,10 @@
 # OS HOMEWORK
 
-* [Banker algorithm](#Banker algorithm)
+* [Banker algorithm](#Banker-algorithm)
 
-* [Process scheduling algorithm](#Process scheduling algorithm) 
+* [Process scheduling algorithm](#Process-scheduling-algorithm) 
 
-* [Thread synchronization](#Thread synchronization)
+* [Thread synchronization](#Thread-synchronization)
 
 ## Banker algorithm
 ```
