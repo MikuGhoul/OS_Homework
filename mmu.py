@@ -35,7 +35,7 @@ def handle(_page_number, _page_address, _page_table_register, _page_table):
             break
     
     # int(list(idict.values())[0]) + page_address
-    print("physical memory:\npage number:" + str(list(idict.values())[0]) + "\npage address:" + str(_page_address))
+    print("\nphysical memory:\n\tpage number:" + str(list(idict.values())[0]) + "\n\tpage address:" + str(_page_address))
 
     
 if __name__ == '__main__':
